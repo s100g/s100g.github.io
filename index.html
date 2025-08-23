@@ -635,28 +635,28 @@
                     <label for="bodyPart" style="display: block; margin-bottom: 0.5rem; color: #333;">Emplacement:</label>
                     <select id="bodyPart" name="bodyPart" required style="width: 100%; padding: 0.5rem; border: 1px solid #ccc; border-radius: 4px;">
                       <option value="">------</option>
-                      <option value="Bras">cou</option>
-                      <option value="Avant-bras">clavicule</option>
-                      <option value="Épaule">poitrine</option>
-                      <option value="Dos">épaule</option>
-                      <option value="Poitrine">bras</option>
-                      <option value="Jambe">intérieur du bras</option>
-                      <option value="Mollet">avant-bras</option>
-                      <option value="Cuisse">poignet</option>
-                      <option value="Pied">main</option>
-                      <option value="Main">dos</option>
-                      <option value="Cou">sternum</option>
-                      <option value="Visage">côtes</option>
-                      <option value="Autre">ventre</option>
-                      <option value="Autre">hanche</option>
-                      <option value="Autre">cuisse</option>
-                      <option value="Autre">arrière-cuisse</option>
-                      <option value="Autre">côté-cuisse</option>
-                      <option value="Autre">genou</option>
-                      <option value="Autre">mollet</option>
-                      <option value="Autre">tibia</option>
-                      <option value="Autre">cheville</option>
-                      <option value="Autre">pied</option>
+                      <option value="cou">cou</option>
+                      <option value="clavicule">clavicule</option>
+                      <option value="poitrine">poitrine</option>
+                      <option value="épaule">épaule</option>
+                      <option value="bras">bras</option>
+                      <option value="intérieur du bras">intérieur du bras</option>
+                      <option value="avant-bras">avant-bras</option>
+                      <option value="poignet">poignet</option>
+                      <option value="main">main</option>
+                      <option value="dos">dos</option>
+                      <option value="sternum">sternum</option>
+                      <option value="côtes">côtes</option>
+                      <option value="ventre">ventre</option>
+                      <option value="hanche">hanche</option>
+                      <option value="cuisse">cuisse</option>
+                      <option value="arrière-cuisse">arrière-cuisse</option>
+                      <option value="côté-cuisse">côté-cuisse</option>
+                      <option value="genou">genou</option>
+                      <option value="mollet">mollet</option>
+                      <option value="tibia">tibia</option>
+                      <option value="cheville">cheville</option>
+                      <option value="pied">pied</option>
                     </select>
                   </div>
                   <div style="flex: 1;">
@@ -718,118 +718,118 @@
 			<script src="assets/js/breakpoints.min.js"></script>
 			<script src="assets/js/util.js"></script>
 			<script src="assets/js/main.js"></script>
-            <script>
-                document.getElementById('contactForm').addEventListener('submit', function(event) {
-                    event.preventDefault();
-                    
-                    // Get form values
-                    const name = document.getElementById('name').value;
-                    const surname = document.getElementById('surname').value;
-                    const age = document.getElementById('age').value;
-                    const town = document.getElementById('town').value;
-                    const mail = document.getElementById('mail').value;
-                    const phone = document.getElementById('phone').value;
-                    const instagram = document.getElementById('instagram').value;
-                    const tattoo = document.getElementById('tattoo').value;
-                    const date = document.getElementById('tattoo').value;
-                    const bodyPart = document.getElementById('bodyPart').value;
-                    const size = document.getElementById('size').value;
-                    const description = document.getElementById('description').value;
-                    
-                    
-                    const referenceImages = document.getElementById('referenceImages').files;
-                    
-                    // Function to send email
-                    const sendEmail = (imageLinks = []) => {
-                        // Construct email body
-                        let emailBody = `PRÉNOM: ${name}\nNOM: ${surname}\nÂGE: ${age}\nVILLE DE RÉSIDENCE: ${town}\nEMAIL: ${mail}\nTÉLÉPHONE: ${phone}\nCOMPTE INSTAGRAM: ${instagram}\nDÉJÀ TATOUÉ: ${tattoo}\nDISPONIBILITÉ: ${date}\nEMPLACEMENT SOUHAITÉ: ${bodyPart}\nTAILLE EN CM: ${size}\nDESCRIPTION: ${description}\n`;
-                        
-                        if (imageLinks.length > 0) {
-                            emailBody += `Images de référence:\n`;
-                            imageLinks.forEach((link, index) => {
-                                emailBody += `Image ${index + 1}: ${link}\n`;
-                            });
-                        }
-                        
-                        // Create mailto link
-                        const subject = `${name} / ${bodyPart} / ${size}`;
-                        const mailtoLink = `mailto:s100gtattoo@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(emailBody)}`;
-                        
-                        // Open email client
-                        window.location.href = mailtoLink;
-                    };
-                    
-                    // If there are images, upload them first
-                    if (referenceImages.length > 0) {
-                        // Check file count (max 5)
-                        if (referenceImages.length > 5) {
-                            alert("Vous ne pouvez télécharger que 5 images maximum. Veuillez sélectionner moins d'images.");
-                            return;
-                        }
-                        
-                        // Check file sizes (max 5MB each)
-                        for (let i = 0; i < referenceImages.length; i++) {
-                            if (referenceImages[i].size > 5 * 1024 * 1024) {
-                                alert(`L'image ${i + 1} est trop volumineuse. Veuillez sélectionner des images de moins de 5MB chacune.`);
-                                return;
-                            }
-                        }
-                        
-                        // Show progress bar
-                        document.getElementById('uploadProgress').style.display = 'block';
-                        
-                        // Array to store upload promises
-                        const uploadPromises = [];
-                        
-                        // Create a promise for each image upload
-                        for (let i = 0; i < referenceImages.length; i++) {
-                            const formData = new FormData();
-                            formData.append('image', referenceImages[i]);
-                            
-                            const uploadPromise = fetch('https://api.imgbb.com/1/upload?expiration=15552000&key=${API_KEY}', {
-                                method: 'POST',
-                                body: formData
-                            })
-                            .then(response => {
-                                if (!response.ok) {
-                                    throw new Error('Network response was not ok');
-                                }
-                                return response.json();
-                            })
-                            .then(data => {
-                                if (data.success) {
-                                    return data.data.url;
-                                } else {
-                                    throw new Error('Upload failed');
-                                }
-                            });
-                            
-                            uploadPromises.push(uploadPromise);
-                        }
-                        
-                        // Wait for all uploads to complete
-                        Promise.all(uploadPromises)
-                            .then(imageLinks => {
-                                // Hide progress bar
-                                document.getElementById('uploadProgress').style.display = 'none';
-                                
-                                // Send email with all image links
-                                sendEmail(imageLinks);
-                            })
-                            .catch(error => {
-                                console.error('Error:', error);
-                                // Hide progress bar
-                                document.getElementById('uploadProgress').style.display = 'none';
-                                // Send email without images
-                                alert("Erreur lors du téléchargement des images. Votre demande sera envoyée sans les images.");
-                                sendEmail();
-                            });
-                    } else {
-                        // No images, send email directly
-                        sendEmail();
-                    }
-                });
-            </script>
+      <script>
+          document.getElementById('contactForm').addEventListener('submit', function(event) {
+              event.preventDefault();
+              
+              // Get form values
+              const name = document.getElementById('name').value;
+              const surname = document.getElementById('surname').value;
+              const age = document.getElementById('age').value;
+              const town = document.getElementById('town').value;
+              const mail = document.getElementById('mail').value;
+              const phone = document.getElementById('phone').value;
+              const instagram = document.getElementById('instagram').value;
+              const tattoo = document.getElementById('tattoo').value;
+              const date = document.getElementById('tattoo').value;
+              const bodyPart = document.getElementById('bodyPart').value;
+              const size = document.getElementById('size').value;
+              const description = document.getElementById('description').value;
+              
+              
+              const referenceImages = document.getElementById('referenceImages').files;
+              
+              // Function to send email
+              const sendEmail = (imageLinks = []) => {
+                  // Construct email body
+                  let emailBody = `PRÉNOM: ${name}\nNOM: ${surname}\nÂGE: ${age}\nVILLE DE RÉSIDENCE: ${town}\nEMAIL: ${mail}\nTÉLÉPHONE: ${phone}\nCOMPTE INSTAGRAM: ${instagram}\nDÉJÀ TATOUÉ: ${tattoo}\nDISPONIBILITÉ: ${date}\nEMPLACEMENT SOUHAITÉ: ${bodyPart}\nTAILLE EN CM: ${size}\nDESCRIPTION: ${description}\n`;
+                  
+                  if (imageLinks.length > 0) {
+                      emailBody += `IMAGES DE RÉFÉRENCE:\n`;
+                      imageLinks.forEach((link, index) => {
+                          emailBody += `Image ${index + 1}: ${link}\n`;
+                      });
+                  }
+                  
+                  // Create mailto link
+                  const subject = `${name} / ${bodyPart} / ${size}`;
+                  const mailtoLink = `mailto:s100gtattoo@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(emailBody)}`;
+                  
+                  // Open email client
+                  window.location.href = mailtoLink;
+              };
+              
+              // If there are images, upload them first
+              if (referenceImages.length > 0) {
+                  // Check file count (max 5)
+                  if (referenceImages.length > 5) {
+                      alert("Vous ne pouvez télécharger que 5 images maximum. Veuillez sélectionner moins d'images.");
+                      return;
+                  }
+                  
+                  // Check file sizes (max 5MB each)
+                  for (let i = 0; i < referenceImages.length; i++) {
+                      if (referenceImages[i].size > 5 * 1024 * 1024) {
+                          alert(`L'image ${i + 1} est trop volumineuse. Veuillez sélectionner des images de moins de 5MB chacune.`);
+                          return;
+                      }
+                  }
+                  
+                  // Show progress bar
+                  document.getElementById('uploadProgress').style.display = 'block';
+                  
+                  // Array to store upload promises
+                  const uploadPromises = [];
+                  
+                  // Create a promise for each image upload
+                  for (let i = 0; i < referenceImages.length; i++) {
+                      const formData = new FormData();
+                      formData.append('image', referenceImages[i]);
+                      
+                      const uploadPromise = fetch(`https://api.imgbb.com/1/upload?expiration=15552000&key=${API_KEY}`, {
+                          method: 'POST',
+                          body: formData
+                      })
+                      .then(response => {
+                          if (!response.ok) {
+                              throw new Error('Network response was not ok');
+                          }
+                          return response.json();
+                      })
+                      .then(data => {
+                          if (data.success) {
+                              return data.data.url;
+                          } else {
+                              throw new Error('Upload failed');
+                          }
+                      });
+                      
+                      uploadPromises.push(uploadPromise);
+                  }
+                  
+                  // Wait for all uploads to complete
+                  Promise.all(uploadPromises)
+                      .then(imageLinks => {
+                          // Hide progress bar
+                          document.getElementById('uploadProgress').style.display = 'none';
+                          
+                          // Send email with all image links
+                          sendEmail(imageLinks);
+                      })
+                      .catch(error => {
+                          console.error('Error:', error);
+                          // Hide progress bar
+                          document.getElementById('uploadProgress').style.display = 'none';
+                          // Send email without images
+                          alert("Erreur lors du téléchargement des images. Votre demande sera envoyée sans les images.");
+                          sendEmail();
+                      });
+              } else {
+                  // No images, send email directly
+                  sendEmail();
+              }
+          });
+      </script>
 
 	</body>
 </html>

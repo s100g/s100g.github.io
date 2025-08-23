@@ -11,6 +11,7 @@
 		<link rel="shortcut icon" type="image/png" href="images/icon.png" />
 		<script async src="https://analytics.eu.umami.is/script.js" data-website-id="2e1bd3b0-ee4f-42b3-86ad-528558e61016"></script>
 		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+		<script src="config.js"></script>
 
 	</head>
 	<body class="is-preload">
@@ -29,7 +30,7 @@
 								<p style="color: #ffffff; font-size: 12px; margin-top: -35px;">PARIS / BERLIN</p>
 								<p style="color: #ffffff; font-size: 12px;">Flower garden and movie flash</p>
 								<p style="color: #ffffff; font-size: 12px; margin-top: -35px;">Open to personal project</p>
-								<p style="color: #ffffff; font-size: 12px; margin-top: -35px;"><a href="#contact">Mail</a> for more info</p>
+								<p style="color: #ffffff; font-size: 12px; margin-top: -35px;"><a href="#book">Mail</a> for more info</p>
 							</div>
 						</div>
 						<nav style="margin-top: -0px;">
@@ -39,7 +40,7 @@
 								<li style="color: #ffffff;"><a href="#photos">Photos</a></li>
 								<li style="color: #ffffff;"><a href="#info">Info</a></li>
 								<li style="color: #ffffff;"><a href="#about">About</a></li>
-								<li style="color: #ffffff;"><a href="#contact">Contact</a></li>
+								<li style="color: #ffffff;"><a href="#book">Book</a></li>
 							</ul>
 						</nav>
 					</header>
@@ -50,7 +51,7 @@
 						<!-- Flash -->
 							<article id="flash">
 								<h2 class="major" style="position: relative; left: 50%; transform: translateX(-50%);">Flash book</h2>
-								<p style="margin: 0 20% 2rem 20%; text-align: justify; text-justify: inter-word;">To reserve a flash, please contact me by e-mail and send a screenshot of the design you're interested in, if it is not shown in blue, meaning that it is reserved or already done. You can also give an estimate of the size you'd like, even if these are usually already the right size. Finally, specify the location on your body where you'd like to get a tattoo by making a nice sketch using the body silhouettes provided in the <a href="#contact" style="text-decoration: underline; text-decoration-color: black; text-underline-offset: 6px;">contact</a> tab.</p>
+								<p style="margin: 0 20% 2rem 20%; text-align: justify; text-justify: inter-word;">To reserve a flash, please contact me by e-mail and send a screenshot of the design you're interested in, if it is not shown in blue, meaning that it is reserved or already done. You can also give an estimate of the size you'd like, even if these are usually already the right size. Finally, specify the location on your body where you'd like to get a tattoo by making a nice sketch using the body silhouettes provided in the <a href="#book" style="text-decoration: underline; text-decoration-color: black; text-underline-offset: 6px;">booking</a> tab.</p>
 								<span class="image main" style="margin-bottom: -5px;"><img src="images/flash/26.JPG" alt="" /></span>
 								<span class="image main" style="margin-top: -5px; margin-bottom: -5px;"><img src="images/flash/25.JPG" alt="" loading="lazy"/></span>
 								<span class="image main" style="margin-top: -5px; margin-bottom: -5px;"><img src="images/flash/24.JPG" alt="" loading="lazy"/></span>
@@ -566,22 +567,127 @@
 								<p style="margin: 0 10% 2rem 10%; text-align: justify; text-justify: inter-word;">At the crossroads of cinema and architecture, my passion has become entangled with the art of tattooing, where I also enjoy stamping blood from ink in the skin of others, marking a memory, a ritual. Influenced by tales, mythologies, herbariums, curiosities and stories told in film or literature, I offer a catalog of flash from my universe, ready to be adopted, just as you would keep an extract from a tale, or wear embroidery as an adornment. I'm also available to put my pencil stroke to good use on your personal projects, to help your ideas blossom in our collaboration.</p>
 							</article>
 
-						<!-- Contact -->
-							<article id="contact">
-								<h2 class="major" style="position: relative; left: 50%; transform: translateX(-50%);">Contact</h2>
+						<!-- Book -->
+							<article id="book">
+								<h2 class="major" style="position: relative; left: 50%; transform: translateX(-50%);">Book</h2>
 								<span class="image main"><img src="images/contact.jpeg" alt="" /></span>
 								<div style="margin: 0 10% 2rem 10%; text-align: justify; text-justify: inter-word;">
 								  <p>In order to carry out a project together, whether to book a flash or develop a personal project, I will need a certain amount of information, to be sent in the content of the e mail:</p>
-								  <ul style="list-style-type:circle">
-                    <li>A screenshot of the flash you're interested in OR Reference images for your personal project. Whether it's a style you like, a shape, drawings or reference of existing tattoos. As much information as possible will help me understand what you want.</li>
-                    <li>The size in cm you'd like (this can be a range)</li>
-                    <li>The desired position on your body, which you can illustrate by showing directly on the silhouettes below.</li>
-                  </ul>
                 </div>
-                <form action="mailto:s100gtattoo@gmail.com" method="get">
-                  <button style="background:none; border:none; position: relative; left: 50%; transform: translateX(-50%);" type="submit">Take an appointment</button>
+                
+                <!-- Contact Form -->
+                <form id="contactForm" autocomplete="on" style="margin: 0 10% 2rem 10%;">
+                  
+                  <div style="display: flex; margin-bottom: 1rem; gap: 1rem;">
+                    <div style="flex: 1;">
+                      <label for="name" style="display: block; margin-bottom: 0.5rem; color: #333;">First Name:</label>
+                      <input type="text" id="name" name="name" required style="width: 100%; padding: 0.5rem; border: 1px solid #ccc; border-radius: 4px;">
+                    </div>
+                    <div style="flex: 1;">
+                      <label for="surname" style="display: block; margin-bottom: 0.5rem; color: #333;">Last Name:</label>
+                      <input type="text" id="surname" name="surname" required style="width: 100%; padding: 0.5rem; border: 1px solid #ccc; border-radius: 4px;">
+                    </div>
+                  </div>
+                  
+                  <div style="display: flex; margin-bottom: 1rem; gap: 1rem;">
+                    <div style="flex: 0.5;">
+                      <label for="age" style="display: block; margin-bottom: 0.5rem; color: #333;">Age:</label>
+                      <input type="number" id="age" name="age" required style="width: 100%; padding: 0.5rem; border: 1px solid #ccc; border-radius: 4px;">
+                    </div>
+                    <div style="flex: 1.5;">
+                      <label for="town" style="display: block; margin-bottom: 0.5rem; color: #333;">City of residence:</label>
+                      <input type="text" id="town" name="town" required style="width: 100%; padding: 0.5rem; border: 1px solid #ccc; border-radius: 4px;">
+                    </div>
+                  </div>
+                  
+                  <div style="display: flex; margin-bottom: 1rem; gap: 1rem;">
+                    <div style="flex: 1;">
+                      <label for="mail" style="display: block; margin-bottom: 0.5rem; color: #333;">Email:</label>
+                      <input type="email" id="mail" name="mail" required style="width: 100%; padding: 0.5rem; border: 1px solid #ccc; border-radius: 4px;">
+                    </div>
+                    <div style="flex: 1;">
+                      <label for="phone" style="display: block; margin-bottom: 0.5rem; color: #333;">Phone number:</label>
+                      <input type="text" id="phone" name="phone" required style="width: 100%; padding: 0.5rem; border: 1px solid #ccc; border-radius: 4px;">
+                    </div>
+                  </div>
+                  
+                  <div style="display: flex; margin-bottom: 1rem; gap: 1rem;">
+                    <div style="flex: 1.3;">
+                      <label for="instagram" style="display: block; margin-bottom: 0.5rem; color: #333;">Instagram:</label>
+                      <input type="text" id="instagram" name="instagram" style="width: 100%; padding: 0.5rem; border: 1px solid #ccc; border-radius: 4px;">
+                    </div>
+                    <div style="flex: 0.7;">
+                      <label for="tattoo" style="display: block; margin-bottom: 0.5rem; color: #333;">Tattooed:</label>
+                      <select id="tattoo" name="tattoo" required style="width: 100%; padding: 0.5rem; border: 1px solid #ccc; border-radius: 4px;">
+                        <option value="">------</option>
+                        <option value="yes">Yes</option>
+                        <option value="no">No</option>
+                      </select>
+                    </div>
+                    <div style="flex: 1.3;">
+                      <label for="date" style="display: block; margin-bottom: 0.5rem; color: #333;">Availabilities:</label>
+                      <input type="text" id="date" name="date" style="width: 100%; padding: 0.5rem; border: 1px solid #ccc; border-radius: 4px;">
+                    </div>
+                  </div>
+                  
+                  <div style="display: flex; margin-bottom: 1rem; gap: 1rem;">
+                  <div style="flex: 1;">
+                    <label for="bodyPart" style="display: block; margin-bottom: 0.5rem; color: #333;">Placement:</label>
+                    <select id="bodyPart" name="bodyPart" required style="width: 100%; padding: 0.5rem; border: 1px solid #ccc; border-radius: 4px;">
+                      <option value="">------</option>
+                      <option value="neck">neck</option>
+                      <option value="collarbone">collarbone</option>
+                      <option value="chest">chest</option>
+                      <option value="shoulder">shoulder</option>
+                      <option value="arm">arm</option>
+                      <option value="inner arm">inner arm</option>
+                      <option value="forearm">forearm</option>
+                      <option value="wrist">wrist</option>
+                      <option value="hand">hand</option>
+                      <option value="back">back</option>
+                      <option value="sternum">sternum</option>
+                      <option value="ribs">ribs</option>
+                      <option value="stomach">stomach</option>
+                      <option value="hip">hip</option>
+                      <option value="thigh">thigh</option>
+                      <option value="back of thigh">back of thigh</option>
+                      <option value="side of thigh">side of thigh</option>
+                      <option value="knee">knee</option>
+                      <option value="calf">calf</option>
+                      <option value="shin">shin</option>
+                      <option value="ankle">ankle</option>
+                      <option value="foot">foot</option>
+                    </select>
+                  </div>
+                  <div style="flex: 1;">
+                    <div style="flex: 1;">
+                      <label for="size" style="display: block; margin-bottom: 0.5rem; color: #333;">Size in cm:</label>
+                      <input type="text" id="size" name="size" style="width: 100%; padding: 0.5rem; border: 1px solid #ccc; border-radius: 4px;">
+                    </div>
+                  </div>
+                  </div>
+                  
+                  <div style="margin-bottom: 1rem;">
+                    <label for="description" style="display: block; margin-bottom: 0.5rem; color: #333;">Description:</label>
+                    <textarea id="description" name="description" rows="4" style="width: 100%; padding: 0.5rem; border: 1px solid #ccc; border-radius: 4px; resize: vertical;" placeholder="Décrivez votre projet, posez des questions ou ajoutez toute information pertinente..."></textarea>
+                  </div>
+                  
+                  <div style="margin-bottom: 1.5rem;">
+                    <label for="referenceImages" style="display: block; margin-bottom: 0.5rem; color: #333;">Reference images:</label>
+                    <input type="file" id="referenceImages" name="referenceImages" accept="image/*" multiple style="width: 100%; padding: 0.5rem; border: 1px solid #ccc; border-radius: 4px;">
+                    <small style="color: #666; font-size: 0.8rem;">Accepted formats: JPG, PNG, GIF. Maximum 5MB per image. Maximum 5 images.</small>
+                  </div>
+                  
+                  <div id="uploadProgress" style="display: none; margin-bottom: 1rem;">
+                    <div style="width: 100%; background-color: #f1f1f1; border-radius: 4px;">
+                      <div id="progressBar" style="width: 0%; height: 10px; background-color: #4CAF50; border-radius: 4px;"></div>
+                    </div>
+                    <p style="font-size: 0.8rem; color: #666;">Uploading...</p>
+                  </div>
+                  
+                  <button type="submit" style="background:none; border:none; position: relative; left: 50%; transform: translateX(-50%);">Submit</button>
                 </form>
-                <span class="image main"><img src="images/body1.jpeg" alt="" style="width: 80%; position: relative; left: 50%; transform: translateX(-50%);"/></span>
+                
                 <p style="margin: 0 10% 2rem 10%; text-align: justify; text-justify: inter-word;">All this information will enable me to set an appropriate budget. Once we've agreed on a price range, I'll let you know when I'll be available. If we agree on an appointment, you'll be asked to pay a deposit to reserve the slot. This deposit serves as a guarantor, for both of us, to confirm that the appointment has been noted and will be insured by both parties. The deposit is deducted from the final price of the tattoo. Appointments can be cancelled or rescheduled free of charge up to 48 hours beforehand. Once the 48-hour limit has passed, the deposit will be retained to compensate for unforeseen cancellations. This deposit also serves as a guarantor and remuneration for personal projects, which involve a greater or lesser amount of drawing time that also needs to be recognized in a tattoo artist's work. That's why I only send the drawing the day before the agreed appointment (I make exceptions when it's your first tattoo). I will of course be available and open to modifying the design until complete satisfaction on d-day. Indeed, working on the design face-to-face makes it much easier to understand the customer's expectations.</p>
 								<ul class="icons">
 									<a href="https://www.instagram.com/s100g" class="icon brands fa-instagram" style="position: relative; left: 50%; transform: translateX(-50%); color: rgb(100, 100, 100); font-size: 30px;"></a>
@@ -612,6 +718,123 @@
 			<script src="assets/js/breakpoints.min.js"></script>
 			<script src="assets/js/util.js"></script>
 			<script src="assets/js/main.js"></script>
+      <script>
+          document.getElementById('contactForm').addEventListener('submit', function(event) {
+
+              event.preventDefault();
+              
+              // Get form values
+              const name = document.getElementById('name').value;
+              const surname = document.getElementById('surname').value;
+              const age = document.getElementById('age').value;
+              const town = document.getElementById('town').value;
+              const mail = document.getElementById('mail').value;
+              const phone = document.getElementById('phone').value;
+              const instagram = document.getElementById('instagram').value;
+              const tattoo = document.getElementById('tattoo').value;
+              const date = document.getElementById('tattoo').value;
+              const bodyPart = document.getElementById('bodyPart').value;
+              const size = document.getElementById('size').value;
+              const description = document.getElementById('description').value;
+              
+              
+              const referenceImages = document.getElementById('referenceImages').files;
+              
+              // Function to send email
+              const sendEmail = (imageLinks = []) => {
+                  // Construct email body
+                  let emailBody = `FIRST NAME: ${name}\nLAST NAME: ${surname}\nAGE: ${age}\nCITY OF RESIDENCE: ${town}\nEMAIL: ${mail}\nPHONE NUMBER: ${phone}\nINSTAGRAM ACCOUNT: ${instagram}\nALREADY TATTOOED: ${tattoo}\nAVAILABILITY: ${date}\nDESIRED PLACEMENT: ${bodyPart}\nSIZE IN CM: ${size}\nDESCRIPTION: ${description}\n`;
+
+                  if (imageLinks.length > 0) {
+                      emailBody += `REFERENCE IMAGES:\n`;
+                      imageLinks.forEach((link, index) => {
+                          emailBody += `Image ${index + 1}: ${link}\n`;
+                      });
+                  }
+                  
+                  // Create mailto link
+                  const subject = `${name} / ${bodyPart} / ${size}`;
+                  const mailtoLink = `mailto:s100gtattoo@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(emailBody)}`;
+                  
+                  // Open email client
+                  window.location.href = mailtoLink;
+              };
+              
+              // If there are images, upload them first
+              if (referenceImages.length > 0) {
+                  // Check file count (max 5)
+                  if (referenceImages.length > 5) {
+                      alert("You can only upload a maximum of 5 images. Please select fewer images.");
+                      return;
+                  }
+                  
+                  // Check file sizes (max 5MB each)
+                  for (let i = 0; i < referenceImages.length; i++) {
+                      if (referenceImages[i].size > 5 * 1024 * 1024) {
+                          alert(`The image ${i + 1} is too large. Please select images that are less than 5MB each.`);
+                          return;
+                      }
+                  }
+                  
+                  // Show progress bar
+                  document.getElementById('uploadProgress').style.display = 'block';
+                  
+                  // Array to store upload promises
+                  const uploadPromises = [];
+                  
+                  // Create a promise for each image upload
+
+                  for (let i = 0; i < referenceImages.length; i++) {
+                      const formData = new FormData();
+                      formData.append('image', referenceImages[i]);
+                      
+                      const uploadPromise = fetch(`https://api.imgbb.com/1/upload?expiration=15552000&key=${API_KEY}`, {
+                          method: 'POST',
+                          body: formData
+                      })
+                      .then(response => {
+                          if (!response.ok) {
+                              throw new Error('Network response was not ok');
+                          }
+                          return response.json();
+                      })
+                      .then(data => {
+                          if (data.success) {
+
+                              return data.data.url;
+                          } else {
+                              throw new Error('Upload failed');
+                          }
+                      });
+                      
+                      uploadPromises.push(uploadPromise);
+                  }
+
+                  
+                  // Wait for all uploads to complete
+                  Promise.all(uploadPromises)
+                      .then(imageLinks => {
+                          // Hide progress bar
+                          document.getElementById('uploadProgress').style.display = 'none';
+                          
+
+                          // Send email with all image links
+                          sendEmail(imageLinks);
+                      })
+                      .catch(error => {
+                          console.error('Error:', error);
+                          // Hide progress bar
+                          document.getElementById('uploadProgress').style.display = 'none';
+                          // Send email without images
+                          alert("Error downloading images. Your request will be sent without the images.");
+                          sendEmail();
+                      });
+              } else {
+                  // No images, send email directly
+                  sendEmail();
+              }
+          });
+      </script>
 
 	</body>
 </html>
