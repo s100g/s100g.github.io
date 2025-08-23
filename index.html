@@ -11,6 +11,7 @@
 		<link rel="icon" type="image/png" href="images/icon.png" />
 		<script async src="https://analytics.eu.umami.is/script.js" data-website-id="2e1bd3b0-ee4f-42b3-86ad-528558e61016"></script>
 		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+		<script src="config.js"></script>
 
 	</head>
 	<body class="is-preload">
@@ -51,7 +52,11 @@
 							<article id="flash">
 								<h2 class="major" style="position: relative; left: 50%; transform: translateX(-50%);">Flash book</h2>
 								<p style="margin: 0 20% 2rem 20%; text-align: justify; text-justify: inter-word;">Afin de réserver un flash, veuillez me contacter par mail en envoyant un screenshot du dessin qui vous intéresse, si celui-ci n’est pas représenté en bleu, signifiant qu’il est réservé ou déjà réalisé. Vous pouvez indiquer une estimation de la taille que vous souhaitez, même si ces derniers ont déjà en général une taille adéquate. Enfin, précisez l’emplacement sur votre corps où vous souhaitez vous faire tatouer en faisant un joli croquis à l’aide des silhouettes de corps proposées dans l’onglet <a href="#contact" style="text-decoration: underline; text-decoration-color: black; text-underline-offset: 6px;">contacter</a>.</p>
-								<span class="image main" style="margin-bottom: -5px;"><img src="images/flash/22.JPG" alt="" /></span>
+								<span class="image main" style="margin-bottom: -5px;"><img src="images/flash/26.JPG" alt="" /></span>
+								<span class="image main" style="margin-top: -5px; margin-bottom: -5px;"><img src="images/flash/25.JPG" alt="" loading="lazy"/></span>
+								<span class="image main" style="margin-top: -5px; margin-bottom: -5px;"><img src="images/flash/24.JPG" alt="" loading="lazy"/></span>
+								<span class="image main" style="margin-top: -5px; margin-bottom: -5px;"><img src="images/flash/23.JPG" alt="" loading="lazy"/></span>
+								<span class="image main" style="margin-top: -5px; margin-bottom: -5px;"><img src="images/flash/22.JPG" alt="" loading="lazy"/></span>
 								<span class="image main" style="margin-top: -5px; margin-bottom: -5px;"><img src="images/flash/21.JPG" alt="" loading="lazy"/></span>
 								<span class="image main" style="margin-top: -5px; margin-bottom: -5px;"><img src="images/flash/20.JPG" alt="" loading="lazy"/></span>
 								<span class="image main" style="margin-top: -5px; margin-bottom: -5px;"><img src="images/flash/19.JPG" alt="" loading="lazy"/></span>
@@ -574,9 +579,71 @@
                     <li>L’emplacement souhaité sur ton corps, que tu peux illustrer en montrant directement sur les silhouettes proposées ci-dessous.</li>
                   </ul>
                 </div>
-                <form action="mailto:s100gtattoo@gmail.com" method="get">
-                  <button style="background:none; border:none; position: relative; left: 50%; transform: translateX(-50%);" type="submit">Prendre rendez-vous</button>
+                
+                <!-- Contact Form -->
+                <form id="contactForm" style="margin: 0 10% 2rem 10%;">
+                  
+                  <div style="display: flex; margin-bottom: 1rem; gap: 1rem;">
+                    <div style="flex: 1;">
+                      <label for="surname" style="display: block; margin-bottom: 0.5rem; color: #333;">Nom:</label>
+                      <input type="text" id="surname" name="surname" required style="width: 100%; padding: 0.5rem; border: 1px solid #ccc; border-radius: 4px;">
+                    </div>
+                    <div style="flex: 1;">
+                      <label for="name" style="display: block; margin-bottom: 0.5rem; color: #333;">Prénom:</label>
+                      <input type="text" id="name" name="name" required style="width: 100%; padding: 0.5rem; border: 1px solid #ccc; border-radius: 4px;">
+                    </div>
+                  </div>
+                  
+                  <div style="display: flex; margin-bottom: 1rem; gap: 1rem;">
+                  <div style="flex: 1;">
+                    <label for="size" style="display: block; margin-bottom: 0.5rem; color: #333;">Taille du tatouage:</label>
+                    <select id="size" name="size" required style="width: 100%; padding: 0.5rem; border: 1px solid #ccc; border-radius: 4px;">
+                      <option value="">--Choisir une taille--</option>
+                      <option value="XS">XS (très petit)</option>
+                      <option value="S">S (petit)</option>
+                      <option value="M">M (moyen)</option>
+                      <option value="L">L (grand)</option>
+                      <option value="XL">XL (très grand)</option>
+                    </select>
+                  </div>
+                  
+                  <div style="flex: 1;">
+                    <label for="bodyPart" style="display: block; margin-bottom: 0.5rem; color: #333;">Emplacement:</label>
+                    <select id="bodyPart" name="bodyPart" required style="width: 100%; padding: 0.5rem; border: 1px solid #ccc; border-radius: 4px;">
+                      <option value="">--Choisir un emplacement--</option>
+                      <option value="Bras">Bras</option>
+                      <option value="Avant-bras">Avant-bras</option>
+                      <option value="Épaule">Épaule</option>
+                      <option value="Dos">Dos</option>
+                      <option value="Poitrine">Poitrine</option>
+                      <option value="Jambe">Jambe</option>
+                      <option value="Mollet">Mollet</option>
+                      <option value="Cuisse">Cuisse</option>
+                      <option value="Pied">Pied</option>
+                      <option value="Main">Main</option>
+                      <option value="Cou">Cou</option>
+                      <option value="Visage">Visage</option>
+                      <option value="Autre">Autre</option>
+                    </select>
+                  </div>
+                  </div>
+                  
+                  <div style="margin-bottom: 1.5rem;">
+                    <label for="referenceImages" style="display: block; margin-bottom: 0.5rem; color: #333;">Images de référence (optionnel):</label>
+                    <input type="file" id="referenceImages" name="referenceImages" accept="image/*" multiple style="width: 100%; padding: 0.5rem; border: 1px solid #ccc; border-radius: 4px;">
+                    <small style="color: #666; font-size: 0.8rem;">Formats acceptés: JPG, PNG, GIF. Max 5MB par image. Maximum 5 images.</small>
+                  </div>
+                  
+                  <div id="uploadProgress" style="display: none; margin-bottom: 1rem;">
+                    <div style="width: 100%; background-color: #f1f1f1; border-radius: 4px;">
+                      <div id="progressBar" style="width: 0%; height: 10px; background-color: #4CAF50; border-radius: 4px;"></div>
+                    </div>
+                    <p style="font-size: 0.8rem; color: #666;">Téléchargement en cours...</p>
+                  </div>
+                  
+                  <button type="submit" style="background:none; border:none; position: relative; left: 50%; transform: translateX(-50%);">Envoyer</button>
                 </form>
+                
                 <span class="image main"><img src="images/body1.jpeg" alt="" style="width: 80%; position: relative; left: 50%; transform: translateX(-50%);"/></span>
                 <p style="margin: 0 10% 2rem 10%; text-align: justify; text-justify: inter-word;">Toutes ces informations me permettront de t’indiquer un budget approprié. Une fois une fourchette de prix partagée, je t’indiquerai mes prochaines disponibilités. Si nous nous accordons sur un rendez-vous, une caution te sera demandée afin de réserver le créneau. Cette caution sert de garant, pour nous deux, afin de confirmer que le rendez-vous est bien noté et sera assuré par les deux parties. Celle-ci est déduite du prix global du tatouage in fine. Le rendez-vous peut être annulé ou décalé sans frais jusque 48 heures avant celui-ci. Une fois la limite des 48heures passée, la caution sera conservée afin de dédommager l’annulation imprévue. Cette caution sert également de garant et de rémunération pour les projets personnels, qui implique un temps de dessin plus ou moins important qui nécessite d’être également reconnu dans le travail d’un tatoueur. C’est pourquoi je n’envoie le dessin seulement la veille du rendez-vous convenu (je réalise des exceptions lorsqu’il s’agit de votre premier tatouage). Je serai bien évidemment disponible et ouverte à modifier le design jusqu’à satisfaction complète le jour J. Le travail du dessin en face à face facilite en effet grandement la compréhension des attentes du client.</p>
 								<ul class="icons">
@@ -608,6 +675,110 @@
 			<script src="assets/js/breakpoints.min.js"></script>
 			<script src="assets/js/util.js"></script>
 			<script src="assets/js/main.js"></script>
+            <script>
+                document.getElementById('contactForm').addEventListener('submit', function(event) {
+                    event.preventDefault();
+                    
+                    // Get form values
+                    const surname = document.getElementById('surname').value;
+                    const name = document.getElementById('name').value;
+                    const size = document.getElementById('size').value;
+                    const bodyPart = document.getElementById('bodyPart').value;
+                    const referenceImages = document.getElementById('referenceImages').files;
+                    
+                    // Function to send email
+                    const sendEmail = (imageLinks = []) => {
+                        // Construct email body
+                        let emailBody = `Bonjour,\n\nJe souhaiterais prendre rendez-vous pour un tatouage.\n\nNom: ${surname}\nPrénom: ${name}\nTaille: ${size}\nEmplacement: ${bodyPart}\n`;
+                        
+                        if (imageLinks.length > 0) {
+                            emailBody += `Images de référence:\n`;
+                            imageLinks.forEach((link, index) => {
+                                emailBody += `Image ${index + 1}: ${link}\n`;
+                            });
+                        }
+                        
+                        emailBody += `\nMerci,\n${name} ${surname}`;
+                        
+                        // Create mailto link
+                        const subject = 'Demande de rendez-vous';
+                        const mailtoLink = `mailto:s100gtattoo@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(emailBody)}`;
+                        
+                        // Open email client
+                        window.location.href = mailtoLink;
+                    };
+                    
+                    // If there are images, upload them first
+                    if (referenceImages.length > 0) {
+                        // Check file count (max 5)
+                        if (referenceImages.length > 5) {
+                            alert("Vous ne pouvez télécharger que 5 images maximum. Veuillez sélectionner moins d'images.");
+                            return;
+                        }
+                        
+                        // Check file sizes (max 5MB each)
+                        for (let i = 0; i < referenceImages.length; i++) {
+                            if (referenceImages[i].size > 5 * 1024 * 1024) {
+                                alert(`L'image ${i + 1} est trop volumineuse. Veuillez sélectionner des images de moins de 5MB chacune.`);
+                                return;
+                            }
+                        }
+                        
+                        // Show progress bar
+                        document.getElementById('uploadProgress').style.display = 'block';
+                        
+                        // Array to store upload promises
+                        const uploadPromises = [];
+                        
+                        // Create a promise for each image upload
+                        for (let i = 0; i < referenceImages.length; i++) {
+                            const formData = new FormData();
+                            formData.append('image', referenceImages[i]);
+                            
+                            const uploadPromise = fetch('https://api.imgbb.com/1/upload?expiration=15552000&key=${API_KEY}', {
+                                method: 'POST',
+                                body: formData
+                            })
+                            .then(response => {
+                                if (!response.ok) {
+                                    throw new Error('Network response was not ok');
+                                }
+                                return response.json();
+                            })
+                            .then(data => {
+                                if (data.success) {
+                                    return data.data.url;
+                                } else {
+                                    throw new Error('Upload failed');
+                                }
+                            });
+                            
+                            uploadPromises.push(uploadPromise);
+                        }
+                        
+                        // Wait for all uploads to complete
+                        Promise.all(uploadPromises)
+                            .then(imageLinks => {
+                                // Hide progress bar
+                                document.getElementById('uploadProgress').style.display = 'none';
+                                
+                                // Send email with all image links
+                                sendEmail(imageLinks);
+                            })
+                            .catch(error => {
+                                console.error('Error:', error);
+                                // Hide progress bar
+                                document.getElementById('uploadProgress').style.display = 'none';
+                                // Send email without images
+                                alert("Erreur lors du téléchargement des images. Votre demande sera envoyée sans les images.");
+                                sendEmail();
+                            });
+                    } else {
+                        // No images, send email directly
+                        sendEmail();
+                    }
+                });
+            </script>
 
 	</body>
 </html>
