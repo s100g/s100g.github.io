@@ -1157,7 +1157,7 @@ input, select, textarea {
 			-ms-transition: -ms-transform 0.325s ease-in-out, -ms-filter 0.325s ease-in-out;
 			transition: transform 0.325s ease-in-out, filter 0.325s ease-in-out;
       -webkit-filter: blur(3px) brightness(50%);
-			background-image: url("../../images/bground.jpg");
+			background-image: url("../../images/bground.webp");
 			background-position: center;
 			background-size: cover;
 			background-repeat: no-repeat;
