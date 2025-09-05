@@ -12,6 +12,48 @@
 		<script async src="https://analytics.eu.umami.is/script.js" data-website-id="2e1bd3b0-ee4f-42b3-86ad-528558e61016"></script>
 		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
 		<script src="config.js"></script>
+    <style>
+      .shop-grid {
+          display: grid;
+          grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+          gap: 20px;
+          padding: 0 10% 2rem 10%;
+      }
+      
+      .product-card {
+          background: #f8f8f8;
+          border-radius: 5px;
+          overflow: hidden;
+          box-shadow: 0 0 10px rgba(0,0,0,0.1);
+          transition: transform 0.3s ease;
+      }
+      
+      .product-card:hover {
+          transform: translateY(-5px);
+      }
+      
+      .product-card img {
+          width: 100%;
+          height: 200px;
+          object-fit: cover;
+      }
+      
+      .product-info {
+          padding: 15px;
+      }
+      
+      .product-info h3 {
+          margin: 0 0 10px 0;
+          font-size: 1.2em;
+          color: #333;
+      }
+      
+      .product-info p {
+          margin: 0 0 15px 0;
+          font-size: 0.9em;
+          color: #666;
+      }
+    </style>
 
 	</head>
 	<body class="is-preload">
@@ -40,7 +82,11 @@
 								<li style="color: #ffffff;"><a href="#photos">Photos</a></li>
 								<li style="color: #ffffff;"><a href="#info">Info</a></li>
 								<li style="color: #ffffff;"><a href="#about">À propos</a></li>
-								<li style="color: #ffffff;"><a href="#book">Booker</a></li>
+							</ul>
+						</nav>
+						<nav style="margin-top: 40px;">
+							<ul>
+								<li style="color: #ffffff;"><a style="background-color: rgba(255,255,255,0.1);" href="#book">Booker</a></li>
 							</ul>
 						</nav>
 					</header>
@@ -613,8 +659,8 @@
                       <label for="tattoo" style="display: block; margin-bottom: 0.5rem; color: #333;">Tatoué:</label>
                       <select id="tattoo" name="tattoo" required style="width: 100%; padding: 0.5rem; border: 1px solid #ccc; border-radius: 4px;">
                         <option value="">------</option>
-                        <option value="yes">Oui</option>
-                        <option value="no">Non</option>
+                        <option value="oui">Oui</option>
+                        <option value="non">Non</option>
                       </select>
                     </div>
                   </div>
@@ -694,6 +740,90 @@
 								</ul>
 							</article>
 
+            <!-- Shop -->
+              <article id="shop">
+                  <h2 class="major" style="position: relative; left: 50%; transform: translateX(-50%);">Boutique</h2>
+                  <p style="margin: 0 20% 2rem 20%; text-align: justify; text-justify: inter-word;">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer non scelerisque massa. Duis posuere at ligula in lobortis. Nam condimentum est quis risus volutpat, non posuere libero placerat. Curabitur malesuada eget orci in ullamcorper. Nulla non iaculis justo, vitae efficitur risus. Sed semper massa at sem suscipit mollis. Vivamus purus felis, fermentum eget laoreet ac, maximus ut lorem. Praesent ut neque sit amet ex fermentum varius.</p>
+                  
+                  <div class="shop-grid">
+                      <div class="product-card">
+                          <img src="images/concept/1.webp" alt="T-shirt Fleur de Sang" loading="lazy">
+                          <div class="product-info">
+                              <h3>Product #1</h3>
+                              <p>Dolor sit amet, consectetur adipiscing elit Integer non</p>
+                              <p><b style="color: #595959;">€25.00</b></p>
+                              <a href="https://buy.stripe.com/test_aEU7tA5cTfjA2Uc144" class="button">Acheter</a>
+                          </div>
+                      </div>
+                      <div class="product-card">
+                          <img src="images/concept/2.webp" alt="Print Cinématographique" loading="lazy">
+                          <div class="product-info">
+                              <h3>Product #2</h3>
+                              <p>Nunc nec pretium felis. In nec vestibulum mi in</p>
+                              <p><b style="color: #595959;">€35.00</b></p>
+                              <a href="https://buy.stripe.com/test_6oE5kA3aA7uGdYc7su" class="button">Acheter</a>
+                          </div>
+                      </div>
+                      <div class="product-card">
+                          <img src="images/concept/3.webp" alt="Tote Bag Jardin Secret" loading="lazy">
+                          <div class="product-info">
+                              <h3>Product #3</h3>
+                              <p>Turpis egestas quisque vulputate venenatis luctus</p>
+                              <p><b style="color: #595959;">€20.00</b></p>
+                              <a href="https://buy.stripe.com/test_9ASeYA4GqfjA4AUcMP" class="button">Acheter</a>
+                          </div>
+                      </div>
+                      <div class="product-card">
+                          <img src="images/concept/4.webp" alt="Pack de Stickers" loading="lazy">
+                          <div class="product-info">
+                              <h3>Product #4</h3>
+                              <p>Sed consectetur congue sapien eu iaculis</p>
+                              <p><b style="color: #595959;">€10.00</b></p>
+                              <a href="https://buy.stripe.com/test_00g5kA7aA7uG8wA14w" class="button">Acheter</a>
+                          </div>
+                      </div>
+                      <div class="product-card">
+                          <img src="images/concept/5.webp" alt="T-shirt Fleur de Sang" loading="lazy">
+                          <div class="product-info">
+                              <h3>Product #1</h3>
+                              <p>Dolor sit amet, consectetur adipiscing elit Integer non</p>
+                              <p><b style="color: #595959;">€25.00</b></p>
+                              <a href="https://buy.stripe.com/test_aEU7tA5cTfjA2Uc144" class="button">Acheter</a>
+                          </div>
+                      </div>
+                      <div class="product-card">
+                          <img src="images/concept/6.webp" alt="Print Cinématographique" loading="lazy">
+                          <div class="product-info">
+                              <h3>Product #2</h3>
+                              <p>Nunc nec pretium felis. In nec vestibulum mi in</p>
+                              <p><b style="color: #595959;">€35.00</b></p>
+                              <a href="https://buy.stripe.com/test_6oE5kA3aA7uGdYc7su" class="button">Acheter</a>
+                          </div>
+                      </div>
+                      <div class="product-card">
+                          <img src="images/concept/7.webp" alt="Tote Bag Jardin Secret" loading="lazy">
+                          <div class="product-info">
+                              <h3>Product #3</h3>
+                              <p>Turpis egestas quisque vulputate venenatis luctus</p>
+                              <p><b style="color: #595959;">€20.00</b></p>
+                              <a href="https://buy.stripe.com/test_9ASeYA4GqfjA4AUcMP" class="button">Acheter</a>
+                          </div>
+                      </div>
+                      <div class="product-card">
+                          <img src="images/concept/8.webp" alt="Pack de Stickers" loading="lazy">
+                          <div class="product-info">
+                              <h3>Product #4</h3>
+                              <p>Sed consectetur congue sapien eu iaculis</p>
+                              <p><b style="color: #595959;">€10.00</b></p>
+                              <a href="https://buy.stripe.com/test_00g5kA7aA7uG8wA14w" class="button">Acheter</a>
+                          </div>
+                      </div>
+
+                      
+                      
+                  </div>
+              </article>
+
 					</div>
 
 				<!-- Footer -->
@@ -731,7 +861,7 @@
               const phone = document.getElementById('phone').value;
               const instagram = document.getElementById('instagram').value;
               const tattoo = document.getElementById('tattoo').value;
-              const date = document.getElementById('tattoo').value;
+              const date = document.getElementById('date').value;
               const bodyPart = document.getElementById('bodyPart').value;
               const size = document.getElementById('size').value;
               const description = document.getElementById('description').value;
