@@ -19,6 +19,9 @@
       #bk-previews img { width: 88px; height: 88px; object-fit: cover; display: block; border: 1px solid #ccc; border-radius: 4px; }
       #bk-previews button { position: absolute; top: -8px; right: -8px; width: 22px; height: 22px; border-radius: 50%; border: 1px solid #333; background: #fff; cursor: pointer; line-height: 1; font-weight: bold; padding: 0;}
       .book-ok { padding: 1.25rem 0; text-align: center; color: inherit; border-top: 1px solid #ccc; border-bottom: 1px solid #ccc; }
+      #bk-submit { display: inline-block; background: #ffffff !important; border: 1px solid #595959 !important; border-radius: 4px; box-shadow: none !important; -webkit-appearance: none; appearance: none; color: #595959 !important; font-family: inherit; font-size: 0.85rem; letter-spacing: 0.2em; text-transform: uppercase; height: auto !important; line-height: 1 !important; padding: 0.9rem 2.75rem; cursor: pointer; transition: background 0.2s ease, color 0.2s ease, border-color 0.2s ease; }
+      #bk-submit:hover:enabled { background: #595959 !important; border-color: #595959 !important; color: #ffffff !important; }
+      #bk-submit:disabled { background: #ffffff !important; border-color: #dddddd !important; color: #999999 !important; cursor: not-allowed; }
     </style>
 
 	</head>
@@ -702,7 +705,7 @@
                     <div id="bk-previews"></div>
                   </div>
                   
-                  <button type="submit" id="bk-submit" style="background:none; border:none; position: relative; left: 50%; transform: translateX(-50%); font-family: inherit; font-size: 16px; cursor: pointer; padding: 10px 20px;">Submit</button>
+                  <div style="text-align: center; margin-top: 1.5rem;"><button type="submit" id="bk-submit">Submit</button></div>
                   <p id="bk-status" style="color: #d9534f; min-height: 1.4em; margin-top: 8px; font-size: 0.9em; text-align: center;"></p>
                 </form>
                 
